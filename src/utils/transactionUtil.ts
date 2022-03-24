@@ -1,6 +1,5 @@
-import { Provider } from '@reef-defi/evm-provider';
+import { Provider, handleTxResponse } from '@reef-defi/evm-provider';
 import { BigNumber } from 'ethers';
-import { handleTxResponse } from '@reef-defi/evm-provider/utils';
 import { ReefSigner } from '../state';
 
 export type TxStatusHandler = (status: TxStatusUpdate) => void;
