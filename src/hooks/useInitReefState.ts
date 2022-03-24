@@ -47,12 +47,12 @@ export const useInitReefState = (
 
   useEffect(() => {
     if (selectedNetwork) {
-      if (apolloClient === true) {
+      if (!apolloClient) {
         const gqlUrls = getGQLUrls(selectedNetwork);
         if (gqlUrls) {
           setApolloUrls(gqlUrls);
         }
-      } else if (apolloClient) {
+      } else if (apolloClient && apolloClient !== true) {
         apolloClientSubj.next(apolloClient);
       }
     }
