@@ -65,7 +65,7 @@
     "@apollo/client": "^3.5.7",
     "@polkadot/extension-dapp": "^0.40.4",
     "@polkadot/react-identicon": "^0.86.4",
-    "@reef-defi/evm-provider": "^1.0.3",
+    "@reef-defi/evm-provider": "file:.yalc/@reef-defi/evm-provider",
     "@reef-defi/extension-dapp": "^0.41.2",
     "@reef-defi/extension-inject": "^0.41.2",
     "@types/react-router-dom": "^5.3.0",

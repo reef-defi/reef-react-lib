@@ -31,11 +31,14 @@ export const useInitReefState = (
   applicationDisplayName: string,
   selectNetwork: Network = availableNetworks.mainnet,
   signersParam?: ReefSigner[],
-  apolloClient?: ApolloClient<any>|boolean,
+  // null creates new apollo instance
+  // apolloIns||true  - waits for apolloIns to be passed in
+  // undefined  - creates new apollo instance but does not pass it to provider
+  apolloClient?: ApolloClient<any>|boolean|null,
 ): UseInitReefState => {
   const apollo: ApolloClient<any>|undefined = useObservableState(apolloClientInstance$);
   const selectedNetwork: Network|undefined = useObservableState(selectedNetworkSubj);
-  const [provider, isProviderLoading] = useProvider((selectedNetwork as Network)?.rpcUrl, apolloClient ? { apollo } : undefined);
+  const [provider, isProviderLoading] = useProvider((selectedNetwork as Network)?.rpcUrl, apolloClient || apolloClient === null ? { apollo } : undefined);
   const [loadedSigners, isSignersLoading, error] = useLoadSigners(applicationDisplayName, signersParam ? undefined : provider);
   const [loading, setLoading] = useState(false);
 
@@ -44,6 +47,10 @@ export const useInitReefState = (
       setCurrentNetwork(selectNetwork);
     }
   }, [selectNetwork]);
+
+  useEffect(() => {
+    console.log('APLLL CH=', apollo, apolloClient);
+  }, [apollo]);
 
   useEffect(() => {
     if (selectedNetwork) {
