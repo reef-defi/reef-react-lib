@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@reef-defi/evm-provider": {
-      "signature": "dc695a2647c45fe48a6f66c68a60769f",
+      "signature": "b068732a796a6d94c99bc50ca43f5f38",
       "file": true,
       "replaced": "^1.0.3"
     }

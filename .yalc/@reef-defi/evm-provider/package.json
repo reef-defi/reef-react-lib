@@ -14,7 +14,8 @@
     "postinstall": "polkadot-dev-yarn-only",
     "test": "polkadot-dev-run-test --coverage --runInBand --testPathIgnorePatterns e2e",
     "test:one": "polkadot-dev-run-test",
-    "test:watch": "polkadot-dev-run-test --watch"
+    "test:watch": "polkadot-dev-run-test --watch",
+    "yalc:publish": "yarn build && yalc publish"
   },
   "resolutions": {
     "@ethersproject/abstract-signer": "~5.5.0",
@@ -41,5 +42,5 @@
   },
   "packageManager": "yarn@3.0.1",
   "stableVersion": "1.0.3",
-  "yalcSig": "dc695a2647c45fe48a6f66c68a60769f"
+  "yalcSig": "b068732a796a6d94c99bc50ca43f5f38"
 }
