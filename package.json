@@ -23,7 +23,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "yalc:publish": "yalc add @reef-defi/evm-provider && yarn build"
+    "yalc:update": "yalc add @reef-defi/evm-provider && yalc publish"
   },
   "peerDependencies": {
     "react": "^17.0.2"
@@ -91,5 +91,6 @@
     "@ethersproject/logger": "5.0.9",
     "@ethersproject/properties": "5.0.9",
     "rollup-plugin-typescript2": "^0.31.1"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
